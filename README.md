@@ -1,2 +1,0 @@
-# audiomatic-web
-Audiomatic website
