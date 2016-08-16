@@ -8,7 +8,7 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content="Your-Image-Url" />
 	<meta property="og:description" content="RESTful audio processing" />
-	<title>Audiomatic - RESTful audio processing</title>
+	<title>Audiomatic - API audio processing</title>
 	<link rel="shortcut icon" type="image/x-icon" href="images/theme-mountain-favicon.ico">
 
 	<!-- Font -->
@@ -44,16 +44,16 @@
             <nav class="overlay-navigation nav-block center">
               <ul>
                 <li class="current">
-                    <a href="#home" data-offset="0" class="scroll-link">Home</a>
+                    <a href="#home" data-offset="0" class="scroll-link">Audiomatic</a>
                   </li>
                   <li>
-                    <a href="#about" data-offset="-60" class="scroll-link">About</a>
+                    <a href="#about" data-offset="-60" class="scroll-link">What it does</a>
                   </li>
                   <li>
-                    <a href="#devices" data-offset="-60" class="scroll-link">Devices</a>
+                    <a href="#devices" data-offset="-60" class="scroll-link">Code Examples</a>
                   </li>
                   <li>
-                    <a href="#gallery" data-offset="-60" class="scroll-link">Gallery</a>
+                    <a href="#gallery" data-offset="-60" class="scroll-link">Heroku</a>
                   </li>
                   <li>
                     <a href="#pricing" data-offset="-60" class="scroll-link">Pricing</a>
@@ -64,7 +64,7 @@
         </div>
         <div class="overlay-navigation-footer row full-width center">
           <div class="column width-12 no-padding">
-            <p class="copyright">&copy; 2016 RADIOKIT LTD. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2016 Neutrino LTD. All Rights Reserved.</p>
           </div>
         </div>
       </div>
@@ -77,100 +77,19 @@
   <div class="wrapper-inner">
 
     <!-- Header -->
-    <header class="header header-fixed header-fixed-on-mobile header-transparent nav-dark" data-bkg-threshold="10" data-compact-threshold="10">
+    <header class="header header-fixed header-fixed-on-mobile nav-dark header-background" data-bkg-threshold="10" data-compact-threshold="10">
       <div class="header-inner">
         <div class="row nav-bar">
           <div class="column width-12 nav-bar-inner">
             <div class="logo">
               <div class="logo-inner">
-                <a href="index.html"><img src="images/web-application/logo-dark.png" alt="Sartre Logo" /></a>
-                <a href="index.html"><img src="images/web-application/logo.png" alt="Sartre Logo" /></a>
+                <a href="index.html"><img src="images/neutrino_logo.png" alt="Neutrino Logo" /></a>
+                <a href="index.html"><img src="images/neutrino_logo.png" alt="Neutrino Logo" /></a>
               </div>
             </div>
             <nav class="navigation nav-block secondary-navigation nav-right">
               <ul>
-                <!-- Dropdown Cart Overview
-                <li>
-                  <div class="dropdown">
-                    <a href="#" class="nav-icon cart button no-page-fade"><span class="cart-indication"><span class="icon-shopping-cart"></span> <span class="badge">3</span></span></a>
-                    <ul class="dropdown-list custom-content cart-overview">
-                      <li class="cart-item">
-                        <a href="single-product.html" class="product-thumbnail">
-                          <img src="images/design-agency/portfolio/grid/no-margins/project-6-square.jpg" alt="" />
-                        </a>
-                        <div class="product-details">
-                          <a href="single-product.html" class="product-title">
-                            Cotton Jump Suit
-                          </a>
-                          <span class="product-quantity">2 x</span>
-                          <span class="product-price"><span class="currency">$</span>15.00</span>
-                          <a href="#" class="product-remove icon-cancel"></a>
-                        </div>
-                      </li>
-                      <li class="cart-item">
-                        <a href="single-product.html" class="product-thumbnail">
-                          <img src="images/design-agency/portfolio/grid/no-margins/project-7-square.jpg" alt="" />
-                        </a>
-                        <div class="product-details">
-                          <a href="single-product.html" class="product-title">
-                            Cotton Jump Suit
-                          </a>
-                          <span class="product-quantity">2 x</span>
-                          <span class="product-price"><span class="currency">$</span>15.00</span>
-                          <a href="#" class="product-remove icon-cancel"></a>
-                        </div>
-                      </li>
-                      <li class="cart-item">
-                        <a href="single-product.html" class="product-thumbnail">
-                          <img src="images/design-agency/portfolio/grid/no-margins/project-8-square.jpg" alt="" />
-                        </a>
-                        <div class="product-details">
-                          <a href="single-product.html" class="product-title">
-                            Cotton Jump Suit
-                          </a>
-                          <span class="product-quantity">2 x</span>
-                          <span class="product-price"><span class="currency">$</span>15.00</span>
-                          <a href="#" class="product-remove icon-cancel"></a>
-                        </div>
-                      </li>
-                      <li class="cart-subtotal">
-                        Sub Total
-                        <span class="amount"><span class="currency">$</span>15.00</span>
-                      </li>
-                      <li class="cart-actions">
-                        <a href="cart.html" class="view-cart">View Cart</a>
-                        <a href="checkout.html" class="checkout button small"><span class="icon-check"></span> Checkout</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li> -->
-                <!-- Dropdown Search Module
-                <li>
-                  <div class="dropdown">
-                    <a href="#" class="nav-icon search button no-page-fade"><span class="icon-magnifying-glass"></span></a>
-                    <div class="dropdown-list custom-content cart-overview">
-                      <div class="search-form-container site-search">
-                        <form action="#" method="get" novalidate>
-                          <div class="row">
-                            <div class="column width-12">
-                              <div class="field-wrapper">
-                                <input type="text" name="search" class="form-search form-element no-margin-bottom" placeholder="type &amp; hit enter...">
-                                <span class="border"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                        <div class="form-response"></div>
-                      </div>
-                    </div>
-                  </div>
-                </li> -->
-              <!--  <li>
-                  Button
-                  <div class="v-align-middle">
-                    <a data-content="inline" data-toolbar="" data-networks="twitter;pinterest" data-modal-mode data-modal-width="600" href="#signup-lightbox" class="lightbox-link button no-label-on-mobile small pull-right no-margin-bottom"><span class="icon-lock left"></span><span>Login</span></a>
-                  </div>
-                </li>-->
+
                 <li class="aux-navigation hide">
                   <!-- Aux Navigation -->
                   <a href="#" class="navigation-show overlay-nav-show nav-icon">
@@ -182,16 +101,16 @@
             <nav class="navigation nav-block primary-navigation nav-right">
               <ul>
                 <li class="current">
-                  <a href="#home" data-offset="0" class="scroll-link">Home</a>
+                  <a href="#home" data-offset="0" class="scroll-link">Audiomatic</a>
                 </li>
                 <li>
-                  <a href="#about" data-offset="-60" class="scroll-link">About</a>
+                  <a href="#about" data-offset="-60" class="scroll-link">What it does</a>
                 </li>
                 <li>
-                  <a href="#devices" data-offset="-60" class="scroll-link">Devices</a>
+                  <a href="#devices" data-offset="-60" class="scroll-link">Code Examples</a>
                 </li>
                 <li>
-                  <a href="#gallery" data-offset="-60" class="scroll-link">Gallery</a>
+                  <a href="#gallery" data-offset="-60" class="scroll-link">Heroku</a>
                 </li>
                 <li>
                   <a href="#pricing" data-offset="-60" class="scroll-link">Pricing</a>
@@ -231,8 +150,8 @@
 															data-animate-in="preset:slideInUpShort;duration:1000ms;"
 															data-no-scale
 														>
-															<h1 class="mb-20 color-white">Silence!</h1>
-															<p class="lead color-white">With Audiomatic sounds bow before you: treat this servant as you like.</p>
+															<h1 class="mb-20 color-white">Audiomatic</h1>
+															<p class="lead color-white">Professional version of Web Audio API</p>
 															<a href="#what" class="button rounded medium border-grey-light bkg-white color-white bkg-hover-orange color-hover-white no-margin-bottom left">
 																<span class="icon-app-store medium left"></span>
 																<span class="button-content">
@@ -258,10 +177,10 @@
 								<div class="column width-6">
 									<div class="hero-content split-hero-content">
 										<div class="hero-content-inner left horizon" data-animate-in="preset:turnInLeft;duration:1000ms;" data-threshold="0.6">
-											<h3 class="mb-30 font-alt-1">What it does</h3>
-											<p class="lead">Audiomatic does the audio processing for you. </p>
-											<p class="color-grey-light">It's build on GStreamer</p>
-											<a href="http://player.vimeo.com/video/18967093?autoplay=1&amp;color=a09283" data-twitter-user="thememountainco" data-image-url="http://marquez.thememountain.com/boxed/images/barber-shop/portfolio/project-5/mobile-app-3.jpg" data-caption="This is a lightbox caption for the video playing" class="button lightbox-link border-grey-light color-grey bkg-hover-orange color-hover-white medium"><span class="icon-play"></span> Play User Story</a>
+											<h3 class="mb-30 font-alt-1">Why we made it?</h3>
+											<p class="lead">It is of course good that something like WebAudioAPI was created. However frankly speaking - it is quite primitive...</p>
+											<p class="color-grey-light">Which means that for real professional use cases - we should wait for WeAudioAPI version 2.0 </p>
+											<p class="color-grey-light">Because we needed for ourselves - we created Audiomatic and now we want to open it as well for other developers.</p>
 										</div>
 									</div>
 								</div>
@@ -279,27 +198,10 @@
 										<div class="feature-content">
 											<div class="feature-content-inner center-on-mobile pt-40 pt-mobile-80">
 												<h4 class="mb-20 title-xlarge horizon" data-parallax="direction:vertical;speed:0.3;rotate:none;">01</h4>
-												<h2 class="mb-20 horizon font-alt-1" data-parallax="direction:vertical;speed:0.1;rotate:none;">Replay Gain!</h2>
-												<p class="lead">Take a photo and apply different filters to selected sections of any image to get a real photo studio effect. Simple and Straightforward.</p>
-												<p>Dipisicing elit, sed do eiusmod tempor incididun. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
-												<div class="row">
-													<div class="column width-8">
-														<div class="progress-bar-group mb-50">
-															<span class="progress-bar-label">Photoshop Speed - 40%</span>
-															<div class="progress-bar small bkg-grey-ultralight">
-																<div class="bar bkg-orange color-white percent-40 horizon"
-																	data-animate-in="transX:-300;duration:1000ms;easing:easeIn;">
-																</div>
-															</div>
-															<span class="progress-bar-label">Pixel Speed - 80%</span>
-															<div class="progress-bar small bkg-grey-ultralight">
-																<div class="bar bkg-orange color-white percent-80 horizon"
-																	data-animate-in="transX:-300;duration:1000ms;easing:easeIn;">
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
+												<h2 class="mb-20 horizon font-alt-1" data-parallax="direction:vertical;speed:0.1;rotate:none;">Counting duration</h2>
+												<p class="lead">However it sound trivial it is not such a obvious thing, as different decoders can give different result. And what if this few or few hundres of miliseconds scale?</p>
+												<p>With Audiomatic you can precisly audio files duration, as we decode everything to a raw format, count the real lenght and give you back true results</p>
+
 											</div>
 										</div>
 									</div>
@@ -323,7 +225,7 @@
 												<h4 class="mb-20 title-xlarge horizon" data-parallax="direction:vertical;speed:0.35;rotate:none;">02</h4>
 												<h2 class="mb-20 horizon font-alt-1" data-parallax="direction:vertical;speed:0.1;rotate:none;">Count Duration! Precisely!</h2>
 												<p class="lead">Wondering why files you're thought are the same length in different systems doesn't last exactly the same? Have you already got hurt when micro-differnces scale?</p>
-												<p>Dipisicing elit, sed do eiusmod tempor incididun. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
+												<p><script src="https://gist.github.com/piotrekzyla/fc59ce9929819ff8201d89696f106281.js"></script></p>
 												<ul class="list-horizontal">
 													<li><span class="icon-fingerprint medium color-grey"></span></li>
 													<li><span class="icon-crop medium color-grey"></span></li>
