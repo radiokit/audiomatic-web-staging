@@ -1838,13 +1838,13 @@ body,
 
 /* Hero */
 .hero-5-1 .media-column{
-	background-image: url(../images/mobile-application/generic/hero-half-1.jpg);
+	background-image: url(../images/charcoal.png);
 }
 .hero-5-2 .media-column{
-	background-image: url(../images/mobile-application/generic/hero-half-2.jpg);
+	background-image: url(../images/white.png);
 }
 .hero-5-3 .media-column{
-	background-image: url(../images/mobile-application/generic/hero-half-3.jpg);
+	background-image: url(../images/charcoal.png);
 }
 
 /* Call to Action */

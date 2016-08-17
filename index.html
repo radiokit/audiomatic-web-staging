@@ -17,6 +17,7 @@
 	<!-- Css -->
 	<link rel="stylesheet" href="css/core.min.css" />
   <link rel="stylesheet" href="css/skin-mobile-application-one-page.css" />
+	<link rel="stylesheet" href="css/androidstudio.css">
 
 	<!--[if lt IE 9]>
     	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -151,7 +152,7 @@
 															data-no-scale
 														>
 															<h1 class="mb-20 color-white">Audiomatic</h1>
-															<p class="lead color-white">Professional version of Web Audio API</p>
+															<p class="lead color-white">Professional Web Audio API</p>
 															<a href="#what" class="button rounded medium border-grey-light bkg-white color-white bkg-hover-orange color-hover-white no-margin-bottom left">
 																<span class="icon-app-store medium left"></span>
 																<span class="button-content">
@@ -320,80 +321,94 @@
 						</section>
 						<!-- Features End -->
 
-						<!-- Stories -->
-						<section id="stories">
+
+
+						<section id="codeexamples">
 
 							<!-- Hero 5 Section -->
-							<div class="section-block hero-5 hero-5-2 show-media-column-on-mobile bkg-charcoal color-white">
+							<div class="section-block hero-5 hero-5-2 show-media-column-on-mobile bkg-charcoal">
+
 								<div class="media-column width-6"></div>
+
+
 								<div class="row">
 									<div class="column width-6">
 										<div class="hero-content split-hero-content">
 											<div class="hero-content-inner v-align-top left">
-												<h2 class="mb-30">Stories</h2>
+												<h2 class="mb-30 color-charcoal">HTTP API</h2>
+
+												<pre><code class="ruby">
+
+													class AudioFile < ApplicationRecord
+													  attr_accessor :url
+													  include AudiomaticRails::Model
+													  #
+													  # audiomatic_file
+													  audiomatic_file_url :set_url
+													  analyze :tags, {artist: {field: :artist_name}, album: {field: :track_title, transformation: [:capitalize]}}
+													  #analyze :duration, [:duration]
+													  analyze :duration, {duration: {transformation: [:to_s=]}}
+													  #analyze :tags, [:artist, :title]
+													  #analyze :tags, field: {title: :track_title, artist: :artist_name}
+
+													  def capitalize result
+													    result.capitalize
+													  end
+													  #analyze :waveform, save_to: :save_tags=
+
+
+													  def set_url
+													    "https://audiomatic-demo-app.herokuapp.com/audio_files/download/#{self.id}"
+													  end
+
+													  def to_s= result
+													    result.to_i / 1000
+													  end
+													end
+
+</code>
+</pre>
 											</div>
 										</div>
 									</div>
+
+
 									<div class="column width-6">
 										<div class="hero-content split-hero-content">
-											<div class="hero-content-inner left horizon" data-animate-in="preset:slideInLeftShort;duration:1000ms;" data-threshold="0.6">
-												<h3 class="mb-30 font-alt-1">Audiomatic rulezzz</h3>
-												<div class="testimonial-slider tm-slider-container testimonials-5-about-1" data-auto-advance data-auto-advance-interval="5000" data-progress-bar="false" data-pause-on-hover="false">
-													<ul class="tms-slides">
-														<li class="tms-slide" data-image>
-															<div class="tms-content-scalable">
-																<div class="row">
-																	<div class="column width-11">
-																		<blockquote class="left large">
-																			<p>Perfectly fills the gap between WebAudioAPI and professional use cases.
-																				<cite>A.F. - </cite>
-																			</p>
-																		</blockquote>
-																	</div>
-																</div>
-															</div>
-														</li>
-														<li class="tms-slide" data-image>
-															<div class="tms-content-scalable">
-																<div class="row">
-																	<div class="column width-11">
-																		<blockquote class="left large">
-																			<p>I have no idea for how long I was waiting for generating waveforms API
-																				<cite>A.F.</cite>
-																			</p>
-																		</blockquote>
-																	</div>
-																</div>
-															</div>
-														</li>
-														<li class="tms-slide" data-image>
-															<div class="tms-content-scalable">
-																<div class="row">
-																	<div class="column width-10">
-																		<blockquote class="left large">
-																			<p>Execellent, execellent excellent. Bought the pro version and I haven't been disappointed once. Buy this app now!
-																				<cite>Jane Lariken</cite>
-																			</p>
-																		</blockquote>
-																	</div>
-																</div>
-															</div>
-														</li>
-														<li class="tms-slide" data-image>
-															<div class="tms-content-scalable">
-																<div class="row">
-																	<div class="column width-10">
-																		<blockquote class="left large">
-																			<p>Used Pixels for my latest photoshoot. Amazing results, even better than Photoshop or any other photo tool out there. Highly recommend it!
-																				<cite>Marcin Lewandowski </cite>
-																			</p>
-																		</blockquote>
-																	</div>
-																</div>
-															</div>
-														</li>
-													</ul>
-												</div>
+											<div class="hero-content-inner v-align-top right">
+												<h2 class="mb-30 color-white">RUBY</h2>
+												<pre><code class="ruby">
+
+													class AudioFile < ApplicationRecord
+														attr_accessor :url
+														include AudiomaticRails::Model
+														#
+														# audiomatic_file
+														audiomatic_file_url :set_url
+														analyze :tags, {artist: {field: :artist_name}, album: {field: :track_title, transformation: [:capitalize]}}
+														#analyze :duration, [:duration]
+														analyze :duration, {duration: {transformation: [:to_s=]}}
+														#analyze :tags, [:artist, :title]
+														#analyze :tags, field: {title: :track_title, artist: :artist_name}
+
+														def capitalize result
+															result.capitalize
+														end
+														#analyze :waveform, save_to: :save_tags=
+
+
+														def set_url
+															"https://audiomatic-demo-app.herokuapp.com/audio_files/download/#{self.id}"
+														end
+
+														def to_s= result
+															result.to_i / 1000
+														end
+													end
+
+												</code>
+												</pre>
+
 											</div>
 										</div>
 									</div>
@@ -401,10 +416,44 @@
 							</div>
 							<!-- Hero 5 Section End -->
 
+							<!-- Hero 5 Section -->
+							<div class="section-block hero-5 hero-5-3 show-media-column-on-mobile bkg-white">
 
+								<div class="media-column width-6"></div>
+
+
+								<div class="row">
+									<div class="column width-6">
+										<div class="hero-content split-hero-content">
+											<div class="hero-content-inner v-align-top left">
+												<h2 class="mb-30 color-white">Rails with Carrierwave</h2>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="column width-6">
+										<div class="hero-content split-hero-content">
+											<div class="hero-content-inner v-align-top right">
+												<h2 class="mb-30 color-charcoal">Full documentation</h2>
+
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Hero 5 Section End -->
 
 						</section>
-						<!-- Stories End -->
+						<!-- Code Examples end -->
+
+
+
+
+
+
+
 
 						<!-- Pricing -->
 						<section id="pricing">
@@ -634,6 +683,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?v=3"></script>
 <script src="javascripts/timber.master.min.js"></script>
+
+<script src="javascripts/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
   </body>
 </html>
