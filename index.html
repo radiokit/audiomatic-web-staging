@@ -342,32 +342,7 @@
 
 												<pre><code class="ruby">
 
-													class AudioFile < ApplicationRecord
-													  attr_accessor :url
-													  include AudiomaticRails::Model
-													  #
-													  # audiomatic_file
-													  audiomatic_file_url :set_url
-													  analyze :tags, {artist: {field: :artist_name}, album: {field: :track_title, transformation: [:capitalize]}}
-													  #analyze :duration, [:duration]
-													  analyze :duration, {duration: {transformation: [:to_s=]}}
-													  #analyze :tags, [:artist, :title]
-													  #analyze :tags, field: {title: :track_title, artist: :artist_name}
-
-													  def capitalize result
-													    result.capitalize
-													  end
-													  #analyze :waveform, save_to: :save_tags=
-
-
-													  def set_url
-													    "https://audiomatic-demo-app.herokuapp.com/audio_files/download/#{self.id}"
-													  end
-
-													  def to_s= result
-													    result.to_i / 1000
-													  end
-													end
+													not yet
 
 </code>
 </pre>
@@ -381,32 +356,22 @@
 											<div class="hero-content-inner v-align-top right">
 												<h2 class="mb-30 color-white">RUBY</h2>
 												<pre><code class="ruby">
-                            class AudioFile < ApplicationRecord
-														attr_accessor :url
-														include AudiomaticRails::Model
-														#
-														# audiomatic_file
-														audiomatic_file_url :set_url
-														analyze :tags, {artist: {field: :artist_name}, album: {field: :track_title, transformation: [:capitalize]}}
-														#analyze :duration, [:duration]
-														analyze :duration, {duration: {transformation: [:to_s=]}}
-														#analyze :tags, [:artist, :title]
-														#analyze :tags, field: {title: :track_title, artist: :artist_name}
+													class YourModel< ApplicationRecord
+include AudiomaticRails::Model
+audiomatic_file_url :set_url
+analyze :tags, [:artist, :title]
+analyze :duration, [:duration]
 
-														def capitalize result
-															result.capitalize
-														end
-														#analyze :waveform, save_to: :save_tags=
+def set_url
+	"http://example.org/file.mp3"
+end
+end
 
 
-														def set_url
-															"https://audiomatic-demo-app.herokuapp.com/audio_files/download/#{self.id}"
-														end
-
-														def to_s= result
-															result.to_i / 1000
-														end
-													end
+audio = YourModel.new
+audio.artist # <= Michael Jackson
+audio.title  # <= Thriller
+audio.duration # <= 312012 [ms]
 
 												</code>
 												</pre>
@@ -429,6 +394,20 @@
 										<div class="hero-content split-hero-content">
 											<div class="hero-content-inner v-align-top left">
 												<h2 class="mb-30 color-white">Rails with Carrierwave</h2>
+												<pre><code>
+class AudioUploader < CarrierWave::Uploader::Base
+  include AudiomaticRails::CarrierWave
+
+  process :tags => [[:artist, :title]]
+
+end
+
+audio = YourModel.new(audio_file)
+audio.save!
+
+audio.artist # <= Michael Jackson
+audio.title  # <= Thriller
+</pre></code>
 											</div>
 										</div>
 									</div>
@@ -438,7 +417,12 @@
 										<div class="hero-content split-hero-content">
 											<div class="hero-content-inner v-align-top right">
 												<h2 class="mb-30 color-charcoal">Full documentation</h2>
-
+												<a href="http://docs.radiokit.org/en/latest/" class="button rounded medium bkg-blue bkg-hover-orange color-white color-hover-charcoal no-margin-bottom left">
+													<span class="icon-app-store medium left"></span>
+													<span class="button-content">
+														ReadTheDocs
+													</span>
+												</a>
 
 											</div>
 										</div>
@@ -586,13 +570,13 @@
 							</div>
 							<!-- Pricing Options End -->
 
-							<!-- Sign Up Section 2
+							<!-- Sign Up Section 2 -->
 							<div class="section-block signup-2 signup-2-1">
 								<div class="row">
 									<div class="column width-7">
 										<div class="signup-form-container horizon" data-parallax="direction:vertical;speed:-0.07;rotate:none;opacity:none;">
-											<h2 class="color-white">Get Notified Of New Features</h2>
-											<p class="mb-30 color-white">Unlock cool new features and new beta plugins by signing up today. You can unsubcribe at any time!</p>
+											<h2 class="color-white">Haven't found a processor you need? Let us know!!</h2>
+											<p class="mb-30 color-white">If you have any feature requests - we would gladly hear them and implement them asap!</p>
 											<form class="signup-form" action="php/subscribe.php" method="post" novalidate>
 												<div class="row">
 													<div class="column width-8">
@@ -611,7 +595,7 @@
 									</div>
 								</div>
 							</div>
-							 Sign Up Section 2 End -->
+							 <!--Sign Up Section 2 End -->
 
 						</section>
 						<!-- Pricing End -->
@@ -624,14 +608,25 @@
     <div class="row flex">
       <div class="column width-6">
         <div class="widget">
-          <h4 class="widget-title">Audiomatic&trade; by RadioKit LTD & SWMansion</h4>
-          <p class="mb-20">Audiomatic is a property of RadioKit LTD & SWMansion.</p>
+          <h4 class="widget-title">Audiomatic&trade; is a property of <a href="https://www.radiokit.org">RadioKit LTD</a> & <a href="https://swmansion.com">Software Mansion</a></h4>
+          <div class="row">
+            <div class="column width-6">
           <address>
-            <em>Craven House<br>
-              40-44 Uxbridge Road<br>
+            <em>RadioKit LTD<br>
+              Craven House 40-44 Uxbridge Road<br>
             London, W5 2BS, UK<br>
           EU VAT GB 293 5414 93</em>
           </address>
+        </div>
+        <div class="column width-5">
+          <address>
+            <em>Software Mansion Sp. z o. o.<br>
+ul. Na Zjeździe 11 p. 9<br>
+30-527 Kraków, Poland</br>
+NIP: 677-23-72-437</em>
+          </address>
+        </div>
+        </div>
           <ul class="social-list list-horizontal">
             <li><a href="#"><span class="icon-twitter-with-circle medium"></span></a></li>
             <li><a href="#"><span class="icon-facebook-with-circle medium"></span></a></li>
@@ -669,7 +664,7 @@
     <div class="row">
       <div class="column width-12">
         <div class="footer-bottom-inner">
-          <p class="copyright pull-left">&copy; RadioKit LTD & SWMansion All Rights Reserved.</p>
+          <p class="copyright pull-left">&copy; RadioKit LTD & Software Mansion All Rights Reserved.</p>
           <a href="#" class="scroll-to-top pull-right" data-no-hide>Top</a>
         </div>
       </div>
