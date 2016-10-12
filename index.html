@@ -330,26 +330,48 @@
 							<!-- Hero 5 Section -->
 							<div class="section-block hero-5 hero-5-2 show-media-column-on-mobile bkg-charcoal">
 
-								<div class="media-column width-6"></div>
+								<div class="media-column width-12"></div>
 
 
 								<div class="row">
-									<div class="column width-6">
+									<div class="column width-12">
 										<div class="hero-content split-hero-content">
 											<div class="hero-content-inner v-align-top left">
 												<h2 class="mb-30 color-charcoal">HTTP API</h2>
 
-												<pre><code class="ruby">
+<p>
 
-													not yet
+Scheduling file processing requires POSTing two parameters to audiomatic api:
+- url - location of processed file,
+- callback_url - location where results of analysis should be returned as JSON.
 
+For example, to obtain duration, POST to:</p>
+<pre><code>https://audiomatic.radiokitapp.org/api/process/v2.0/analysis/audio/duration</code></pre>
+
+JSON body: <pre><code class="json">{
+
+“callback_url”:”https://example.org/callback”, “url”:”https://example.org/file.mp3“
+}
 </code>
 </pre>
+<p>Use Basic Auth with login and token you obtained during registration. You can use either Authorization Header or URL encoding.</p>
 											</div>
 										</div>
 									</div>
 
 
+
+								</div>
+							</div>
+							<!-- Hero 5 Section End -->
+
+							<!-- Hero 5 Section -->
+							<div class="section-block hero-5 hero-5-3 show-media-column-on-mobile bkg-white">
+
+								<div class="media-column width-6"></div>
+
+
+								<div class="row">
 									<div class="column width-6">
 										<div class="hero-content split-hero-content">
 											<div class="hero-content-inner v-align-top right">
@@ -375,38 +397,6 @@ audio.duration # <= 312012 [ms]
 												</code>
 												</pre>
 
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- Hero 5 Section End -->
-
-							<!-- Hero 5 Section -->
-							<div class="section-block hero-5 hero-5-3 show-media-column-on-mobile bkg-white">
-
-								<div class="media-column width-6"></div>
-
-
-								<div class="row">
-									<div class="column width-6">
-										<div class="hero-content split-hero-content">
-											<div class="hero-content-inner v-align-top left">
-												<h2 class="mb-30 color-white">Rails with Carrierwave</h2>
-												<pre><code>
-class AudioUploader < CarrierWave::Uploader::Base
-  include AudiomaticRails::CarrierWave
-
-  process :tags => [[:artist, :title]]
-
-end
-
-audio = YourModel.new(audio_file)
-audio.save!
-
-audio.artist # <= Michael Jackson
-audio.title  # <= Thriller
-</pre></code>
 											</div>
 										</div>
 									</div>
@@ -643,7 +633,7 @@ NIP: 677-23-72-437</em>
       <div class="column width-5 offset-1">
         <div class="widget">
           <h4 class="widget-title">Get Notified When New Processors Come Out</h4>
-          <p>If you wanna keep up with all the updates and be the first to know when new processors are available in Audiomitic - please sign up. We promise that we don't spam and you can unsubscribe at any time.</p>
+          <p>If you wanna keep up with all the updates and be the first to know when new processors are available in Audiomatic - please sign up. We promise that we don't spam and you can unsubscribe at any time.</p>
           <div class="signup-form-container">
             <form method="post" action="https://app.freshmail.com/pl/actions/subscribe/" target="_blank">
         			<input type="hidden" name="subscribers_list_hash" value="y0ee26uug9" /><br />
@@ -677,6 +667,7 @@ NIP: 677-23-72-437</em>
 </div>
 
 <!-- Js -->
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?v=3"></script>
 <script src="javascripts/timber.master.min.js"></script>
